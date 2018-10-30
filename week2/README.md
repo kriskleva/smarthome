@@ -9,6 +9,8 @@ Install library
 
 ## The WHAT
 
+http://arduino.esp8266.com/stable/package_esp8266com_index.json
+
 IOT registries
 * https://console.cloud.google.com/iot/registries?project=openbench-aiy-platform
 
