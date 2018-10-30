@@ -37,6 +37,25 @@ exports.get = (req, res) => {
     });
 };
 
+/**
+ * Triggered from a message on a Cloud Pub/Sub topic.
+ *
+ * @param {!Object} event Event payload and metadata.
+ * @param {!Function} callback Callback function to signal completion.
+ */
+exports.post = (event, callback) => {
+  const pubsubMessage = event.data;
+  var req_body = {"kind":"Telemetry","key":"sensor"};
+  var message = Buffer.from(pubsubMessage.data, 'base64').toString();
+  const key = getKeyFromRequestData(req_body);
+  const entity = {
+    key: key,
+    data: {"message":message}
+  };
+  var save = datastore.save(entity);
+  callback();
+};
+
 function getKeyFromRequestData (requestData) {
   if (!requestData.key) {
     throw new Error('Key not provided. Make sure you have a "key" property in your request');
