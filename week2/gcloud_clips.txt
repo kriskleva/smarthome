@@ -1,0 +1,253 @@
+Welcome to the Google Cloud SDK! Run "gcloud -h" to get the list of available commands.
+---
+
+C:\Program Files (x86)\Google\Cloud SDK>gcloud init
+Welcome! This command will take you through the configuration of gcloud.
+
+Settings from your current configuration [default] are:
+compute:
+  region: us-east1
+  zone: us-east1-c
+core:
+  account: kris@mainedrones.org
+  disable_usage_reporting: 'False'
+  project: mainedrone-build-videos
+
+Pick configuration to use:
+ [1] Re-initialize this configuration [default] with new settings
+ [2] Create a new configuration
+Please enter your numeric choice:  1
+
+Your current configuration has been set to: [default]
+
+You can skip diagnostics next time by using the following flag:
+  gcloud init --skip-diagnostics
+
+Network diagnostic detects and fixes local network connection issues.
+Checking network connection...done.
+Reachability Check passed.
+Network diagnostic (1/1 checks) passed.
+
+Choose the account you would like to use to perform operations for
+this configuration:
+ [1] kris@mainedrones.org
+ [2] Log in with a new account
+Please enter your numeric choice:  1
+
+You are logged in as: [kris@mainedrones.org].
+
+WARNING: Listing available projects failed: There was a problem refreshing your current auth tokens: invalid_grant: Bad Request
+Please run:
+
+  $ gcloud auth login
+
+to obtain new credentials, or if you have already logged in with a
+different account:
+
+  $ gcloud config set account ACCOUNT
+
+to select an already authenticated account to use.
+Enter project id you would like to use:  openbench-aiy-platform
+Your current project has been set to: [openbench-aiy-platform].
+
+Not setting default zone/region (this feature makes it easier to use
+[gcloud compute] by setting an appropriate default value for the
+--zone and --region flag).
+See https://cloud.google.com/compute/docs/gcloud-compute section on how to set
+default compute region and zone manually. If you would like [gcloud init] to be
+able to do this for you the next time you run it, make sure the
+Compute Engine API is enabled for your project on the
+https://console.developers.google.com/apis page.
+
+Your Google Cloud SDK is configured and ready to use!
+
+* Commands that require authentication will use kris@mainedrones.org by default
+* Commands will reference project `openbench-aiy-platform` by default
+Run `gcloud help config` to learn how to change individual settings
+
+This gcloud configuration is called [default]. You can create additional configurations if you work with multiple accounts and/or projects.
+Run `gcloud topic configurations` to learn more.
+
+Some things to try next:
+
+* Run `gcloud --help` to see the Cloud Platform services you can interact with. And run `gcloud help COMMAND` to get help on any gcloud command.
+* Run `gcloud topic -h` to learn about advanced features of the SDK like arg files and output formatting
+
+
+Updates are available for some Cloud SDK components.  To install them,
+please run:
+  $ gcloud components update
+
+C:\development\smarthome\smarthome>openssl req -x509 -newkey rsa:2048 -keyout rsa_private.pem -nodes -out rsa_cert.pem -subj "/CN=unused"
+Generating a 2048 bit RSA private key
+...................................................................................................................+++++
+.....................................................................+++++
+writing new private key to 'rsa_private.pem'
+-----
+
+C:\development\smarthome\smarthome>cd ..
+
+C:\development\smarthome>git clone https://github.com/GoogleCloudPlatform/nodejs-docs-samples
+Cloning into 'nodejs-docs-samples'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 10779 (delta 2), reused 2 (delta 2), pack-reused 10776
+Receiving objects: 100% (10779/10779), 13.75 MiB | 3.52 MiB/s, done.
+Resolving deltas: 100% (6849/6849), done.
+
+C:\development\smarthome>cd nodejs-docs-samples/
+
+C:\development\smarthome\nodejs-docs-samples>ls
+CODE_OF_CONDUCT.md  auth             debugger         iot           memorystore        resource          trace
+CONTRIBUTING.md     bigquery         dlp              jobs          monitoring         scripts           translate
+CONTRIBUTORS        cloudtasks       dns              key.json.enc  package-lock.json  spanner           video
+LICENSE             computeengine    endpoints        kms           package.json       speech            vision
+README.md           containerengine  error-reporting  language      pubsub             storage
+appengine           datastore        functions        logging       renovate.json      storage-transfer
+
+C:\development\smarthome\nodejs-docs-samples>cd iot
+
+C:\development\smarthome\nodejs-docs-samples\iot>cd mqtt_example
+
+C:\development\smarthome\nodejs-docs-samples\iot\mqtt_example>cp ..\..\..\smarthome\rsa_private.pem .
+
+C:\development\smarthome\nodejs-docs-samples\iot\mqtt_example>npm install
+npm WARN deprecated text-encoding@0.6.4: no longer maintained
+npm WARN deprecated circular-json@0.3.3: CircularJSON is in maintenance only, flatted is its successor.
+npm WARN deprecated hoek@2.16.3: The major version is no longer supported. Please update to 4.x or newer
+
+> grpc@1.7.3 install C:\development\smarthome\nodejs-docs-samples\iot\mqtt_example\node_modules\grpc
+> node-pre-gyp install --fallback-to-build --library=static_library
+
+[grpc] Success: "C:\development\smarthome\nodejs-docs-samples\iot\mqtt_example\node_modules\grpc\src\node\extension_binary\node-v57-win32-x64-unknown\grpc_node.node" is installed via remote
+
+> protobufjs@6.8.8 postinstall C:\development\smarthome\nodejs-docs-samples\iot\mqtt_example\node_modules\protobufjs
+> node scripts/postinstall
+
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN nodejs-docs-samples-iot-mqtt-example@0.0.1 No repository field.
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.4 (node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.4: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+
+added 1246 packages from 843 contributors and audited 7592 packages in 64.292s
+found 24 vulnerabilities (13 low, 9 moderate, 2 high)
+  run `npm audit fix` to fix them, or `npm audit` for details
+
+C:\development\smarthome\nodejs-docs-samples\iot\mqtt_example>gcloud auth login
+Your browser has been opened to visit:
+
+    https://accounts.google.com/o/oauth2/auth?redirect_uri=http%3A%2F%2Flocalhost%3A8085%2F&prompt=select_account&response_type=code&client_id=32555940559.apps.googleusercontent.com&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fappengine.admin+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcompute+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Faccounts.reauth&access_type=offline
+
+
+WARNING: `gcloud auth login` no longer writes application default credentials.
+If you need to use ADC, see:
+  gcloud auth application-default --help
+
+You are now logged in as [kris@mainedrones.org].
+Your current project is [openbench-aiy-platform].  You can change this setting by running:
+  $ gcloud config set project PROJECT_ID
+
+C:\development\smarthome\nodejs-docs-samples\iot\mqtt_example>gcloud pubsub subscriptions create projects/openbench-aiy-platform/subscriptions/obp-subscription --topic=projects/openbench-aiy-platform/topics/obp-device-events
+Created subscription [projects/openbench-aiy-platform/subscriptions/obp-subscription].
+
+C:\development\smarthome\nodejs-docs-samples\iot\mqtt_example>node cloudiot_mqtt_example_nodejs.js --projectId=openbench-aiy-platform --cloudRegion=us-central1 --registryId=obp-device-registry --deviceId=obp-device-1 --privateKeyFile=rsa_private.pem --numMessages=25 --algorithm=RS256
+Google Cloud IoT Core MQTT example.
+connect
+Publishing message: obp-device-registry/obp-device-1-payload-1
+message received:
+message received:
+Publishing message: obp-device-registry/obp-device-1-payload-2
+Publishing message: obp-device-registry/obp-device-1-payload-3
+Publishing message: obp-device-registry/obp-device-1-payload-4
+Publishing message: obp-device-registry/obp-device-1-payload-5
+Publishing message: obp-device-registry/obp-device-1-payload-6
+Publishing message: obp-device-registry/obp-device-1-payload-7
+Publishing message: obp-device-registry/obp-device-1-payload-8
+Publishing message: obp-device-registry/obp-device-1-payload-9
+Publishing message: obp-device-registry/obp-device-1-payload-10
+Publishing message: obp-device-registry/obp-device-1-payload-11
+Publishing message: obp-device-registry/obp-device-1-payload-12
+Publishing message: obp-device-registry/obp-device-1-payload-13
+Publishing message: obp-device-registry/obp-device-1-payload-14
+Publishing message: obp-device-registry/obp-device-1-payload-15
+Publishing message: obp-device-registry/obp-device-1-payload-16
+Publishing message: obp-device-registry/obp-device-1-payload-17
+Publishing message: obp-device-registry/obp-device-1-payload-18
+Publishing message: obp-device-registry/obp-device-1-payload-19
+Publishing message: obp-device-registry/obp-device-1-payload-20
+Publishing message: obp-device-registry/obp-device-1-payload-21
+Publishing message: obp-device-registry/obp-device-1-payload-22
+Publishing message: obp-device-registry/obp-device-1-payload-23
+Publishing message: obp-device-registry/obp-device-1-payload-24
+Publishing message: obp-device-registry/obp-device-1-payload-25
+Closing connection to MQTT. Goodbye!
+close
+
+C:\development\smarthome\nodejs-docs-samples\iot\mqtt_example>gcloud pubsub subscriptions pull --auto-ack projects/openbench-aiy-platform/subscriptions/obp-subscription
+┌────────────────────────────────────────────┬─────────────────┬──────────────────────────────────────┐
+│                    DATA                    │    MESSAGE_ID   │              ATTRIBUTES              │
+├────────────────────────────────────────────┼─────────────────┼──────────────────────────────────────┤
+│ obp-device-registry/obp-device-1-payload-5 │ 281498088231595 │ deviceId=obp-device-1                │
+│                                            │                 │ deviceNumId=2795530550825270         │
+│                                            │                 │ deviceRegistryId=obp-device-registry │
+│                                            │                 │ deviceRegistryLocation=us-central1   │
+│                                            │                 │ projectId=openbench-aiy-platform     │
+│                                            │                 │ subFolder=                           │
+└────────────────────────────────────────────┴─────────────────┴──────────────────────────────────────┘
+
+C:\development\smarthome\nodejs-docs-samples\iot\mqtt_example>gcloud pubsub subscriptions pull --auto-ack projects/openbench-aiy-platform/subscriptions/obp-subscription
+┌────────────────────────────────────────────┬─────────────────┬──────────────────────────────────────┐
+│                    DATA                    │    MESSAGE_ID   │              ATTRIBUTES              │
+├────────────────────────────────────────────┼─────────────────┼──────────────────────────────────────┤
+│ obp-device-registry/obp-device-1-payload-2 │ 281491105560731 │ deviceId=obp-device-1                │
+│                                            │                 │ deviceNumId=2795530550825270         │
+│                                            │                 │ deviceRegistryId=obp-device-registry │
+│                                            │                 │ deviceRegistryLocation=us-central1   │
+│                                            │                 │ projectId=openbench-aiy-platform     │
+│                                            │                 │ subFolder=                           │
+└────────────────────────────────────────────┴─────────────────┴──────────────────────────────────────┘
+
+
+C:\development\smarthome\smarthome>openssl ecparam -genkey -name prime256v1 -noout -out ec_private.pem
+unable to write 'random state'
+
+C:\development\smarthome\smarthome>openssl ec -in ec_private.pem -pubout -out ec_public.pem
+read EC key
+writing EC key
+
+C:\development\smarthome\smarthome>openssl ec -in ec_private.pem -noout -text
+read EC key
+Private-Key: (256 bit)
+priv:
+    12:b4:9d:73:40:3a:e1:ad:f7:d1:59:65:82:09:8a:
+    6f:36:f3:c7:36:4e:0b:a1:40:74:25:bc:40:df:76:
+    52:07
+pub:
+    04:8c:56:68:76:2d:3e:77:fa:c9:b4:6a:89:95:d1:
+    c7:a3:ec:26:09:78:5c:d7:0b:75:c2:c8:b7:b5:ca:
+    d3:07:a7:05:f3:2e:63:94:1f:1a:53:4b:90:1a:29:
+    c3:9b:83:43:a4:2e:94:be:4c:98:14:55:76:bf:86:
+    10:9c:f4:5a:21
+ASN1 OID: prime256v1
+NIST CURVE: P-256
+
+C:\development\smarthome\smarthome>gcloud iot devices create obp-device-2 --region=us-central1 --registry=obp-device-registry --public-key path=ec_public.pem,type=es256
+Created device [obp-device-2].
+
+
+C:\development\smarthome\nodejs-docs-samples\functions\datastore>gcloud functions deploy get --trigger-http
+Deploying function (may take a while - up to 2 minutes)...done.
+availableMemoryMb: 256
+entryPoint: get
+httpsTrigger:
+  url: https://us-central1-openbench-aiy-platform.cloudfunctions.net/get
+labels:
+  deployment-tool: cli-gcloud
+name: projects/openbench-aiy-platform/locations/us-central1/functions/get
+runtime: nodejs6
+serviceAccountEmail: openbench-aiy-platform@appspot.gserviceaccount.com
+sourceUploadUrl: https://storage.googleapis.com/gcf-upload-us-central1-2d44e332-5fae-4c4a-af06-81aee6f3fd57/7ddcfd85-0048-478b-ae5a-0d8a6be51f97.zip?GoogleAccessId=service-815779500482@gcf-admin-robot.iam.gserviceaccount.com&Expires=1540787668&Signature=RP87feYApSqVPHhj9MHTu6NQcBS0jnbVXPbeVTkkcOhi3joztvEWCBkf7OVjdxHeWlj3Y5BaqX0KQ4XDTLqhRcDFhlLS1joRhjeieph7c7D3yQl%2BWGWym0DEYDuO79BIhwrF2U6%2BrdrvDPLIuD%2FwXFYrT3NA0Gv0T9DUmpTPRj8vhhx7NWp6YakVRv2PSmX0cIif3y5hI8RqWGUXF18wAozqu58njrvx%2FAfYD1JYUSRQ%2Bn%2BwiuaJT3xzXNDLITqaV%2BxpTNKhjD3dIMKDgnp1wd5AFCT7eZBpyRgrjOIO%2Bcn2L%2FP7EYWxCo8LZDXMaXTU3cFvpCNyE99p7I8IGKv%2FGw%3D%3D
+status: ACTIVE
+timeout: 60s
+updateTime: '2018-10-29T04:04:44Z'
+versionId: '1'
