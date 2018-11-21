@@ -23,6 +23,7 @@
 #include <time.h>
 #include <rBase64.h>
 #include <CloudIoTCore.h>
+#include <ArduinoJson.h>
 #include "backoff.h"
 
 #include "iot_config.h" // Wifi configuration here
@@ -30,19 +31,26 @@
 // Clout IoT configuration that you don't need to change
 const char* host = CLOUD_IOT_CORE_HTTP_HOST;
 const int httpsPort = CLOUD_IOT_CORE_HTTP_PORT;
+
+StaticJsonDocument<200> doc;
+JsonObject root = doc.to<JsonObject>();
+
 CloudIoTCoreDevice device(project_id, location, registry_id, device_id,
                           private_key_str);
 
 unsigned int priv_key[8];
 unsigned long iss = 0;
-int sensorPin = A0; 
+int sensorPin = A0;
 String jwt;
 boolean wasErr;
 WiFiClientSecure client;
 
 // Helpers for this board
 String getDefaultSensor() {
-  return  "Wifi: " + String(WiFi.RSSI()) + "db Light: " + analogRead(sensorPin) + "k";
+  root["sensor"] = "Wifi";
+  root["RSSI"] = String(WiFi.RSSI());
+
+  return  root;
 }
 
 String getJwt() {
